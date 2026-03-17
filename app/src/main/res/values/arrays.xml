@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="backup_interval_entries">
+        <item>Every 6 hours</item>
+        <item>Every 12 hours</item>
+        <item>Daily</item>
+        <item>Every 2 days</item>
+        <item>Weekly</item>
+    </string-array>
+    <string-array name="backup_interval_values">
+        <item>6</item>
+        <item>12</item>
+        <item>24</item>
+        <item>48</item>
+        <item>168</item>
+    </string-array>
+
+    <string-array name="backup_retention_entries">
+        <item>Keep 3 backups</item>
+        <item>Keep 5 backups</item>
+        <item>Keep 10 backups</item>
+        <item>Keep all</item>
+    </string-array>
+    <string-array name="backup_retention_values">
+        <item>3</item>
+        <item>5</item>
+        <item>10</item>
+        <item>-1</item>
+    </string-array>
+</resources>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BackupVault</string>
+    <string name="app_description">Contacts &amp; SMS Backup</string>
+
+    <!-- Navigation -->
+    <string name="nav_dashboard">Home</string>
+    <string name="nav_backup">Backup</string>
+    <string name="nav_restore">Restore</string>
+    <string name="nav_history">History</string>
+    <string name="nav_settings">Settings</string>
+
+    <!-- Dashboard -->
+    <string name="last_backup">Last Backup</string>
+    <string name="no_backup_yet">No backups yet</string>
+    <string name="contacts_count">Contacts</string>
+    <string name="sms_count">SMS</string>
+    <string name="storage_used">Storage Used</string>
+    <string name="back_up_now">Back Up Now</string>
+    <string name="view_history">History</string>
+
+    <!-- Backup -->
+    <string name="create_backup">Create Backup</string>
+    <string name="backup_contacts">Contacts</string>
+    <string name="backup_sms">SMS Messages</string>
+    <string name="encrypt_backup">Encrypt backup</string>
+    <string name="upload_to_drive">Upload to Google Drive</string>
+    <string name="schedule_auto_backup">Schedule Auto Backup</string>
+    <string name="backing_up">Backing up…</string>
+    <string name="backup_complete">Backup complete!</string>
+    <string name="backup_failed">Backup failed</string>
+
+    <!-- Restore -->
+    <string name="restore_backup">Restore Backup</string>
+    <string name="local_tab">Local</string>
+    <string name="drive_tab">Google Drive</string>
+    <string name="browse_file">Browse Backup File</string>
+    <string name="restore_now">Restore Selected Backup</string>
+    <string name="restore_complete">Restore complete!</string>
+    <string name="backup_preview">Backup Preview</string>
+
+    <!-- Drive -->
+    <string name="connect_drive">Connect Google Drive</string>
+    <string name="sign_in_google">Sign in with Google</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="drive_connected">Drive Connected</string>
+    <string name="drive_not_connected">Google Drive not connected</string>
+
+    <!-- Permissions -->
+    <string name="permission_required">Permission Required</string>
+    <string name="contacts_permission_rationale">BackupVault needs access to your contacts to create and restore backups.</string>
+    <string name="sms_permission_rationale">BackupVault needs access to your SMS messages to back them up and restore them.</string>
+    <string name="storage_permission_rationale">BackupVault needs storage access to save backup files on your device.</string>
+    <string name="go_to_settings">Open Settings</string>
+    <string name="permission_denied">Permission denied. Some features may be unavailable.</string>
+
+    <!-- Settings -->
+    <string name="settings">Settings</string>
+    <string name="auto_backup">Auto Backup</string>
+    <string name="backup_frequency">Backup Frequency</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="encryption">Encryption</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="about">About</string>
+    <string name="version">Version</string>
+
+    <!-- Errors -->
+    <string name="error_generic">Something went wrong. Please try again.</string>
+    <string name="error_no_permission">Permission not granted</string>
+    <string name="error_no_space">Not enough storage space</string>
+    <string name="error_network">Network error. Check your connection.</string>
+    <string name="error_drive_auth">Google Drive authentication failed</string>
+    <string name="error_decrypt">Failed to decrypt backup. File may be corrupted.</string>
+
+    <!-- Notifications -->
+    <string name="notif_backup_title">BackupVault</string>
+    <string name="notif_backup_text">Backup in progress…</string>
+    <string name="notif_backup_complete">Backup completed successfully</string>
+    <string name="notif_reminder_title">Time to back up!</string>
+    <string name="notif_reminder_text">Your data hasn\'t been backed up recently.</string>
+
+    <!-- File provider authority -->
+    <string name="file_provider_authority" translatable="false">com.app.backup.fileprovider</string>
+</resources>

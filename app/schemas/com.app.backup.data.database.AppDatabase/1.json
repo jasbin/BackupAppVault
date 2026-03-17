@@ -1,0 +1,136 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "69c2ca70072a34434a3803aa5966225d",
+    "entities": [
+      {
+        "tableName": "backup_records",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`backup_id` TEXT NOT NULL, `created_at` INTEGER NOT NULL, `backup_date_display` TEXT, `contacts_count` INTEGER NOT NULL, `sms_count` INTEGER NOT NULL, `file_path` TEXT, `file_size_bytes` INTEGER NOT NULL, `status` TEXT, `backup_type` TEXT, `drive_file_id` TEXT, `drive_file_name` TEXT, `error_message` TEXT, `device_name` TEXT, `app_version` TEXT, `checksum` TEXT, `is_encrypted` INTEGER NOT NULL, `includes_contacts` INTEGER NOT NULL, `includes_sms` INTEGER NOT NULL, PRIMARY KEY(`backup_id`))",
+        "fields": [
+          {
+            "fieldPath": "backupId",
+            "columnName": "backup_id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "createdAt",
+            "columnName": "created_at",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "backupDateDisplay",
+            "columnName": "backup_date_display",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "contactsCount",
+            "columnName": "contacts_count",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "smsCount",
+            "columnName": "sms_count",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "filePath",
+            "columnName": "file_path",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "fileSizeBytes",
+            "columnName": "file_size_bytes",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "status",
+            "columnName": "status",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "backupType",
+            "columnName": "backup_type",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "driveFileId",
+            "columnName": "drive_file_id",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "driveFileName",
+            "columnName": "drive_file_name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "errorMessage",
+            "columnName": "error_message",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "deviceName",
+            "columnName": "device_name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "appVersion",
+            "columnName": "app_version",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "checksum",
+            "columnName": "checksum",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "isEncrypted",
+            "columnName": "is_encrypted",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "includesContacts",
+            "columnName": "includes_contacts",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "includesSms",
+            "columnName": "includes_sms",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "backup_id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '69c2ca70072a34434a3803aa5966225d')"
+    ]
+  }
+}

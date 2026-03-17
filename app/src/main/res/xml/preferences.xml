@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Auto Backup Category -->
+    <PreferenceCategory
+        android:title="Auto Backup"
+        app:iconSpaceReserved="false">
+
+        <SwitchPreferenceCompat
+            android:defaultValue="false"
+            android:key="auto_backup_enabled"
+            android:summary="Automatically back up your data in the background"
+            android:title="Enable Auto Backup" />
+
+        <ListPreference
+            android:defaultValue="24"
+            android:dependency="auto_backup_enabled"
+            android:entries="@array/backup_interval_entries"
+            android:entryValues="@array/backup_interval_values"
+            android:key="backup_interval_hours"
+            android:summary="%s"
+            android:title="Backup Frequency" />
+
+        <SwitchPreferenceCompat
+            android:defaultValue="true"
+            android:dependency="auto_backup_enabled"
+            android:key="backup_on_wifi_only"
+            android:summary="Only upload to Drive on Wi-Fi"
+            android:title="Wi-Fi Only for Drive" />
+
+    </PreferenceCategory>
+
+    <!-- Backup Content Category -->
+    <PreferenceCategory
+        android:title="Backup Content"
+        app:iconSpaceReserved="false">
+
+        <SwitchPreferenceCompat
+            android:defaultValue="true"
+            android:key="backup_contacts"
+            android:title="Include Contacts" />
+
+        <SwitchPreferenceCompat
+            android:defaultValue="true"
+            android:key="backup_sms"
+            android:title="Include SMS Messages" />
+
+        <SwitchPreferenceCompat
+            android:defaultValue="true"
+            android:key="encrypt_backups"
+            android:summary="Protect backups with AES-256 encryption"
+            android:title="Encrypt Backups" />
+
+    </PreferenceCategory>
+
+    <!-- Appearance -->
+    <PreferenceCategory
+        android:title="Appearance"
+        app:iconSpaceReserved="false">
+
+        <SwitchPreferenceCompat
+            android:defaultValue="false"
+            android:key="dark_mode"
+            android:summary="Use dark theme"
+            android:title="Dark Mode" />
+
+    </PreferenceCategory>
+
+    <!-- Storage Management -->
+    <PreferenceCategory
+        android:title="Storage"
+        app:iconSpaceReserved="false">
+
+        <ListPreference
+            android:defaultValue="5"
+            android:entries="@array/backup_retention_entries"
+            android:entryValues="@array/backup_retention_values"
+            android:key="max_local_backups"
+            android:summary="%s"
+            android:title="Keep Local Backups" />
+
+        <Preference
+            android:key="clear_old_backups"
+            android:summary="Remove failed and outdated backups"
+            android:title="Clean Up Old Backups" />
+
+    </PreferenceCategory>
+
+    <!-- Notifications -->
+    <PreferenceCategory
+        android:title="Notifications"
+        app:iconSpaceReserved="false">
+
+        <SwitchPreferenceCompat
+            android:defaultValue="true"
+            android:key="notify_backup_complete"
+            android:title="Backup Complete Notifications" />
+
+        <SwitchPreferenceCompat
+            android:defaultValue="false"
+            android:key="backup_reminder"
+            android:summary="Get reminded if no backup for 7 days"
+            android:title="Backup Reminders" />
+
+    </PreferenceCategory>
+
+    <!-- About -->
+    <PreferenceCategory
+        android:title="About"
+        app:iconSpaceReserved="false">
+
+        <Preference
+            android:key="privacy_policy"
+            android:title="Privacy Policy" />
+
+        <Preference
+            android:key="app_version"
+            android:summary="1.0.0"
+            android:title="Version" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
