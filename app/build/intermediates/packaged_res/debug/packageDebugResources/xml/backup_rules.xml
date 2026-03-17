@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<full-backup-content>
-    <!-- Exclude backup files themselves (they're managed separately) -->
-    <exclude domain="file" path="backups/" />
-    <!-- Exclude cache -->
-    <exclude domain="cache" path="." />
-</full-backup-content>

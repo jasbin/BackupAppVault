@@ -1,13 +1,13 @@
+gitignore
 .gradle/
 build/
-app/build/
+**/build/
 local.properties
 .idea/
 *.iml
 *.iws
 *.ipr
-atest-result/
-.DS_Store
+atest-result/.DS_Store
 captures/
 .externalNativeBuild/
 .cxx/
