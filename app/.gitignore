@@ -1,0 +1,48 @@
+gitignore
+# Built artifacts
+*.apk
+*.aar
+*.ap_
+*.dex
+bin/
+gen/
+out/
+build/
+captures/
+
+# Gradle files
+.gradle/
+local.properties
+gradle.xml
+
+# IDE - IntelliJ / Android Studio
+.idea/
+*.iml
+*.iws
+*.ipr
+cmake-build-*/
+
+# Android Studio - generated files
+.navigation/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Log files
+*.log
+
+# Keystores (DO NOT commit your production keys!)
+*.jks
+*.keystore
+*.p12
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Google Services (if you use Firebase/Google APIs)
+google-services.json
+
+# DataStore / Local DB exports
+*.db
+*.db-journal
