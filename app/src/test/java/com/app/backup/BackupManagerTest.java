@@ -4,8 +4,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import com.app.backup.data.backup.BackupManager;
@@ -26,8 +24,6 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import io.reactivex.rxjava3.core.Observable;
 
 @RunWith(MockitoJUnitRunner.class)
 public class BackupManagerTest {
@@ -89,11 +85,11 @@ public class BackupManagerTest {
     @Test
     public void testBackupResultIsDone() {
         BackupManager.BackupResult done = new BackupManager.BackupResult(
-                BackupManager.BackupResult.STAGE_DONE, 100, "/path/to/backup");
+                "test-id", BackupManager.BackupResult.STAGE_DONE, 100, "/path/to/backup");
         assertTrue("Result with STAGE_DONE should return isDone=true", done.isDone());
 
         BackupManager.BackupResult inProgress = new BackupManager.BackupResult(
-                BackupManager.BackupResult.STAGE_COMPRESSING, 70, null);
+                "test-id", BackupManager.BackupResult.STAGE_COMPRESSING, 70, null);
         assertFalse("Result with non-done stage should return isDone=false", inProgress.isDone());
     }
 
