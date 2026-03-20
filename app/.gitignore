@@ -46,3 +46,5 @@ google-services.json
 # DataStore / Local DB exports
 *.db
 *.db-journal
+
+.DS_Store

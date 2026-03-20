@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData;
 import com.app.backup.data.database.AppDatabase;
 import com.app.backup.data.database.entity.BackupRecord;
 
+import java.io.File;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -50,18 +51,40 @@ public class BackupRepository {
     }
 
     public void deleteBackup(BackupRecord record) {
-        Completable.fromAction(() -> database.backupDao().deleteBackup(record))
-                .subscribeOn(Schedulers.io()).subscribe();
+        Completable.fromAction(() -> {
+            if (record.getFilePath() != null) {
+                new File(record.getFilePath()).delete();
+            }
+            database.backupDao().deleteBackup(record);
+        }).subscribeOn(Schedulers.io()).subscribe();
     }
 
     public void deleteBackupById(String id) {
-        Completable.fromAction(() -> database.backupDao().deleteBackupById(id))
-                .subscribeOn(Schedulers.io()).subscribe();
+        Completable.fromAction(() -> {
+            BackupRecord record = database.backupDao().getBackupById(id);
+            if (record != null && record.getFilePath() != null) {
+                new File(record.getFilePath()).delete();
+            }
+            database.backupDao().deleteBackupById(id);
+        }).subscribeOn(Schedulers.io()).subscribe();
     }
 
     public void deleteFailedBackups() {
         Completable.fromAction(() -> database.backupDao().deleteFailedBackups())
                 .subscribeOn(Schedulers.io()).subscribe();
+    }
+
+    public void cleanupOldBackups(long cutoffTime) {
+        Completable.fromAction(() -> {
+            List<BackupRecord> oldBackups = database.backupDao().getOldBackups(cutoffTime);
+            for (BackupRecord record : oldBackups) {
+                if (record.getFilePath() != null) {
+                    new File(record.getFilePath()).delete();
+                }
+                database.backupDao().deleteBackup(record);
+            }
+            database.backupDao().deleteFailedBackups();
+        }).subscribeOn(Schedulers.io()).subscribe();
     }
 
     public long getTotalBackupSize() {

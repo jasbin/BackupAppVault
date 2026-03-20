@@ -54,8 +54,8 @@ public interface BackupDao {
     @Query("DELETE FROM backup_records WHERE status = 'failed'")
     void deleteFailedBackups();
 
-    @Query("DELETE FROM backup_records WHERE created_at < :cutoffTime")
-    void deleteOldBackups(long cutoffTime);
+    @Query("SELECT * FROM backup_records WHERE created_at < :cutoffTime")
+    List<BackupRecord> getOldBackups(long cutoffTime);
 
     @Query("SELECT * FROM backup_records WHERE backup_type = 'local' AND status = 'completed' ORDER BY created_at DESC")
     List<BackupRecord> getLocalCompletedBackups();
